@@ -5,7 +5,7 @@
 
 #define MAX_SIZE  100
 
-void Fibonacci(int *fibonacci_array, int nums);
+int fibonacci(int n)
 
 void main()
 {
@@ -23,23 +23,6 @@ void main()
 	return ;
 }
 
-void Fibonacci(int *fibonacci_array, int nums)
-{
-	int *array;
-	int temp;
-	int temp_next=1, temp_prev=0;
-
-	array = fibonacci_array;
-	array[0] = 0;
-	array[1] = 1;
-
-	for(i=2;i<nums; i++){
-		temp = temp_next + temp_prev;
-		temp_prev = temp_next;
-		temp_next = temp;
-		
-		array[i] = temp_next;
-	}
-	
-	return ;
+int fibonacci(int n){
+return (n==0) ? 0 : (n==1) ? 1 : (fibonacci(n-1) + fibonacci(n-2));// use ternary and recursion to shorten code
 }
